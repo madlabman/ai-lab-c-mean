@@ -15,6 +15,7 @@ import org.jfree.data.xy.XYSeries
 import org.jfree.data.xy.XYSeriesCollection
 import java.awt.Font
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class Controller {
@@ -31,7 +32,7 @@ class Controller {
     }
 
     private fun mainBtnClicked() {
-        val dataset = createDataset()
+        val dataset = createDataset(FCM().run())
         val chart = createChart(dataset)
         val viewer = ChartViewer(chart)
 
@@ -102,14 +103,18 @@ class Controller {
         return chart_xy
     }
 
-    private fun createDataset(): XYDataset {
+    private fun createDataset(data: ArrayList<ArrayList<Point>>): XYDataset {
         val dataset = XYSeriesCollection()
-        val xySeria = XYSeries("test")
-        val random = Random()
-        for (i in 0..30) {
-            xySeria.add(random.nextDouble() * 100, random.nextDouble() * 100)
+
+        var index = 1
+        for (a in data) {
+            val xySeries = XYSeries("Кластер $index")
+            for (p in a) {
+                xySeries.add(p.props[0], p.props[1])
+            }
+            dataset.addSeries(xySeries)
+            index++
         }
-        dataset.addSeries(xySeria)
 
         return dataset;
     }
