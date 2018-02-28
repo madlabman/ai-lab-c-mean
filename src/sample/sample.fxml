@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="v_box" stylesheets="@sample.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane>
+         <children>
+            <Label alignment="CENTER" layoutX="255.0" layoutY="15.0" text="Алгоритм c-means" textAlignment="CENTER" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="centerPane" prefHeight="420.0" prefWidth="640.0" />
+      <AnchorPane>
+         <children>
+            <Button fx:id="mainBtn" alignment="CENTER" defaultButton="true" layoutX="255.0" layoutY="15.0" mnemonicParsing="false" styleClass="main_button" text="Запустить" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

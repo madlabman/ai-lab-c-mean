@@ -1,0 +1,21 @@
+.v_box {
+    -fx-background-color: #fff;
+}
+
+.main_button {
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+}
+
+.main_button:pressed {
+    -fx-background-color: #3c60af;
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+}
