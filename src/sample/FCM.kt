@@ -9,7 +9,7 @@ class FCM {
     private val epsilon = 0.000500  // termination criteria
     private val mExp = 3.0          // fuzzyness coefficient
 
-    private val ptsCount = 100      // points count
+    private val ptsCount = 5000      // points count
     private val clsCount = 3        // clusters count
     private val dimCount = 2        // dimensions count
 
@@ -82,7 +82,10 @@ class FCM {
         }
     }
 
-    fun calcClusterCentres() {
+    /**
+     * Recalculate centres of clusters
+     */
+    private fun calcClusterCentres() {
         clusterCentres = ArrayList(clsCount)
 
         for (i in 0 until clsCount) {
@@ -108,6 +111,7 @@ class FCM {
             val maxDiff = updateObjDegree()
         } while (maxDiff > epsilon)
 
+        // Generate output set
         val clusters = ArrayList<ArrayList<Point>>()
         for (k in 0 until clsCount) {
             clusters.add(ArrayList())
