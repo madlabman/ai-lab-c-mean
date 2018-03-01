@@ -10,7 +10,7 @@ class FCM {
     private val mExp = 3.0          // fuzzyness coefficient
 
     private val ptsCount = 5000      // points count
-    private val clsCount = 3        // clusters count
+    private val clsCount = 4        // clusters count
     private val dimCount = 2        // dimensions count
 
     private val objArray = ArrayList<Point>()
@@ -25,7 +25,7 @@ class FCM {
      */
     private fun calcObjToClusterRel(obj: Point, c: Int): Double {
         var sum = 0.0
-        val p = 2 / mExp - 1.0
+        val p = 2 / (mExp - 1.0)
         for (k in 0 until clsCount) {
             val r = obj.getLength(clusterCentres[c]) / obj.getLength(clusterCentres[k])
             sum += pow( r, p )
