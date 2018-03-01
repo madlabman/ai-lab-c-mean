@@ -108,12 +108,14 @@ class Controller {
 
         var index = 1
         for (a in data) {
-            val xySeries = XYSeries("Кластер $index")
-            for (p in a) {
-                xySeries.add(p.props[0], p.props[1])
+            if (a.isNotEmpty()) {
+                val xySeries = XYSeries("Кластер $index")
+                for (p in a) {
+                    xySeries.add(p.props[0], p.props[1])
+                }
+                dataset.addSeries(xySeries)
+                index++
             }
-            dataset.addSeries(xySeries)
-            index++
         }
 
         return dataset;
